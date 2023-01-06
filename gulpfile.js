@@ -27,7 +27,7 @@ const path = {
   },
   images: {
     src: 'src/images/**',
-    dest: 'dist/img/',
+    dest: 'dist/images/',
   },
 };
 
@@ -45,7 +45,7 @@ gulp.task('styles', () =>
   gulp
     .src(path.styles.src)
     .pipe(sourcemaps.init())
-    .pipe(scss({ outputStyle: 'expanded' }).on('error', scss.logError))
+    .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
     .pipe(
       autoprefixer({
         cascade: false,
