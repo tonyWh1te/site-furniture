@@ -4,6 +4,8 @@
 @import 'libs';
 @import 'global';
 
+// HEADER
+
 .header{
     &__inner{
         display: flex;
@@ -36,5 +38,206 @@
         @extend %title-font;
         color: rgba(54, 56, 56, 0.9);
         line-height: 22px;
+    }
+}
+
+.rightside-menu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 100%;
+    max-width: 694px;
+    background-color: white;
+    padding-top: 40px;
+    box-shadow: 1px 6px 8px 0px #000;
+    transition: all .5s;
+    &.rightside-menu--close{
+        transform: translateX(500%);
+    }
+    &__close{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 50px;
+        margin-bottom: 60px;
+    }
+    &__content{
+        text-align: center;
+        max-width: 485px;
+        margin: 0 auto;
+    }
+    &__logo{
+        margin-bottom: 40px;
+        display: inline-block;
+    }
+    &__title{
+        color: $title;
+        @extend %title-font;
+        font-size: 36px;
+        line-height: 51px;
+        position: relative;
+        margin-bottom: 17px;
+        padding-bottom: 15px;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            max-width: 252px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #6D7278;
+        }
+    }
+    &__text{
+        margin-bottom: 75px;
+    }
+    &__images{
+        max-width: 485px;
+    }
+
+}
+
+// FOOTER
+
+.footer{
+    &__content{
+        background-color: #DFDFDF;
+        padding: 60px 0 80px;
+    }
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__contact{
+        width: 540px;
+    }
+    &__info-title{
+        color: $title;
+        @extend %title-font;
+        margin-bottom: 14px;
+        line-height: 23px;
+    }
+    &__info-text{
+        margin-bottom: 16px;
+        max-width: 475px;
+    }
+    &__info-email{
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        color: $title;
+        margin-bottom: 22px;
+        padding-left: 30px;
+        position: relative;
+        &::before{
+            content: '';
+            background-image: url(../images/envelope.svg);
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 12px;
+            position: absolute;
+        }
+    }
+    &__form{
+        display: flex;
+    }
+    &__form-input{
+        padding: 6px 10px 6px 18px;
+        border: 1px solid rgba($title, .7);
+        border-radius: 21px;
+        background-color: transparent;
+        width: 100%;
+        &::placeholder{
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 27;
+            color: #A1A1A1;
+        }
+    }
+    &__form-button{
+        background-color: $title;
+        border-radius: 21px;
+        border: none;
+        padding: 6px 12px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #FFFFF0;
+        min-width: 160px;
+        margin-left: 9px;
+        cursor: pointer;
+    }
+    &__social{
+        width: 125px;
+        margin-right: auto;
+        margin-left: 100px;
+    }
+    &__social-link{
+        padding-left: 28px;
+        position: relative;
+        position: relative;
+        &::before{
+            content: '';
+            top: 3px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+        }
+    }
+    &__social-link--facebook::before{
+        content: '';
+        background-image: url(../images/facebook.svg);
+    }
+    &__social-link--instagram::before{
+        content: '';
+        background-image: url(../images/instagram.svg);
+        width: 14px;
+        height: 14px;
+        top: 4px;
+    }
+    &__social-link--pinterest::before{
+        content: '';
+        background-image: url(../images/Pinterest.svg);
+    }
+    &__social-link--youtube::before{
+        content: '';
+        background-image: url(../images/youtube.svg);
+        width: 18px;
+        height: 12px;
+        top: 4px;
+    }
+    &__social-link--whatsapp::before{
+        content: '';
+        background-image: url(../images/whatsapp.svg);
+        width: 14px;
+        height: 14px;
+        top: 4px;
+    }
+    &__social-item,
+    &__menu-item{
+        margin-bottom: 15px;
+    }
+    &__social-link,
+    &__menu-link{
+        font-size: 14px;
+        font-weight: 600;
+        color: #707070;
+    }
+    &__menu{
+        margin-right: 60px;
+        width: 130px;
+    }
+    &__copyright{
+        background-color: $title;
+        color: #A1A1A1;
+        text-align: center;
+        padding: 42px 0 41px;
     }
 }
