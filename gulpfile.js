@@ -31,7 +31,7 @@ const path = {
   },
 };
 
-gulp.task('clean', () => del(['dist/*', '!dist/img']));
+gulp.task('clean', () => del(['dist/*', '!dist/images']));
 
 gulp.task('html', () =>
   gulp
