@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const scss = require('gulp-sass')(require('sass'));
 const del = require('del');
 const rename = require('gulp-rename');
-const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
@@ -60,11 +59,6 @@ gulp.task('styles', () =>
 gulp.task('scripts', () =>
   gulp
     .src(path.scripts.src, { sourcemaps: true })
-    .pipe(
-      babel({
-        presets: ['@babel/env'],
-      })
-    )
     .pipe(uglify())
     .pipe(concat('main.min.js'))
     .pipe(gulp.dest(path.scripts.dest))
@@ -96,4 +90,12 @@ gulp.task('watch', () => {
   gulp.watch(path.images.src, gulp.parallel('img'));
 });
 
-gulp.task('build', gulp.series('clean', 'html', gulp.parallel('scripts', 'styles', 'img'), 'watch'));
+gulp.task(
+  'build',
+  gulp.series(
+    'clean',
+    'html',
+    gulp.parallel('scripts', 'styles', 'img'),
+    'watch'
+  )
+);
