@@ -21,7 +21,11 @@ const path = {
     dest: 'dist/css/',
   },
   scripts: {
-    src: ['node_modules/mixitup/dist/mixitup.js', 'src/js/**/*.js'],
+    src: [
+      'node_modules/mixitup/dist/mixitup.js',
+      'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+      'src/js/**/*.js',
+    ],
     dest: 'dist/js/',
   },
   images: {

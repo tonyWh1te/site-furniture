@@ -39,6 +39,20 @@
     color: rgba(54, 56, 56, 0.9);
     line-height: 22px;
   }
+  &__list-link--active {
+    padding-bottom: 4px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      border-radius: 1px;
+      background-color: rgba($title, 0.7);
+    }
+  }
 }
 
 .rightside-menu {
@@ -98,6 +112,30 @@
   }
   &__images {
     max-width: 485px;
+  }
+}
+
+// breadcrumbs
+
+.breadcrumbs {
+  padding: 13px 14px;
+  background-color: rgba(#dfdfdf, 0.5);
+  &__list {
+    display: flex;
+  }
+  &__item::after {
+    content: '/';
+    margin-right: 4px;
+  }
+  &__item:last-child::after {
+    display: none;
+  }
+  &__link {
+    font-size: 14px;
+    color: $default;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -602,5 +640,63 @@
     color: $title;
     font-size: 24px;
     line-height: 38px;
+  }
+}
+
+// ABOUT
+
+.about {
+  &__prev {
+    padding: 160px 0;
+    background-image: url(../images/about-prev.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    text-align: center;
+    margin-top: -53px;
+  }
+  &__prev-title {
+    @extend %title-font;
+    color: $title;
+    font-size: 60px;
+    line-height: 80px;
+  }
+  &__content {
+    padding: 130px 0 40px;
+  }
+  &__title {
+    @extend %title-font;
+    color: $title;
+    font-size: 36px;
+    line-height: 60px;
+    max-width: 822px;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 200px;
+      background-color: $line;
+    }
+  }
+  &__text {
+    padding-left: 284px;
+    p {
+      margin-bottom: 30px;
+    }
+  }
+  &__popup {
+    background-image: url(../images/popup-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    min-height: 414px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
